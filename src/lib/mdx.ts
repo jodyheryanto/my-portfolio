@@ -23,6 +23,7 @@ export interface App {
   title: string;
   description: string;
   image: StaticImageData;
+  images?: (StaticImageData | string)[];
   service: string;
   url: string;
   pathname: string;

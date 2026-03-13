@@ -2,12 +2,15 @@ import { FadeIn, FadeInStagger } from '@/components';
 import {
   AboutMe,
   App,
-  AppOpen,
+  Archive,
+  BookOpen,
   BottomLeftArrow,
   BottomRightArrow,
+  BriefCase,
   ChallengeIcon,
   ChevronDown,
   ChevronRight,
+  CloudUpload,
   CollapseAll,
   ContactMe,
   Eslint,
@@ -26,8 +29,10 @@ import {
   Projects,
   Public,
   PublicOpen,
+  RadioTower,
   ReactIcon,
   Refresh,
+  Remote,
   SolutionIcon,
   Src,
   SrcOpen,
@@ -40,7 +45,6 @@ import {
   TsConfig,
   Tsx,
   WorkExperience,
-  YamlIcon,
 } from '@/icons';
 import { App as AppType, Leetcode as LeetcodeType, MDXEntry } from '@/lib/mdx';
 import { Section, SubMenu, selectExpanded, selectPortfolio, selectSectionIsVisible, selectSectionOrder, selectSections, useSelector } from '@/lib/redux';
@@ -50,13 +54,6 @@ import Link from 'next/link';
 import { usePathname, useSelectedLayoutSegments } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import SubCollapsableMenu from '../SubCollapsableMenu';
-import ReadmeIcon from '@/icons/readme-icon';
-import AnsibleOpen from '@/icons/ansible-open';
-import Ansible from '@/icons/ansible';
-
-const staticFiles = [
-  { name: '.gitignore', icon: <Git /> },
-];
 
 const fileType = {
   ['react' as string]: <ReactIcon />,
@@ -64,18 +61,48 @@ const fileType = {
   ['next' as string]: <NextConfig />,
   ['svelte' as string]: <Svelte />,
   ['leetcode' as string]: <Leetcode />,
+  ['laravel' as string]: <NodeJs />,
+  ['aws' as string]: <CloudUpload />,
+  ['none' as string]: <FavIcon />,
+  ['teaching' as string]: <RadioTower />,
+  ['publication' as string]: <BookOpen />,
+  ['certification' as string]: <Archive />,
 };
 
 const subSectionsIcons: { [key: string]: JSX.Element } = {
   'about-me': <AboutMe />,
   'work-experience': <WorkExperience />,
   skills: <Technologies />,
-  'my-work': <Projects />,
+  projects: <Projects />,
   contact: <ContactMe />,
   about: <LogIcon />,
   challenge: <ChallengeIcon />,
   solution: <SolutionIcon />,
   technologies: <TechnologiesIcon />,
+  teaching: <RadioTower />,
+  certification: <Archive />,
+  'journal-articles': <BookOpen />,
+  scope: <ChallengeIcon />,
+  infrastructure: <CloudUpload />,
+  monitoring: <TechnologiesIcon />,
+  gallery: <Archive />,
+  management: <LogIcon />,
+  devops: <CloudUpload />,
+  goals: <SolutionIcon />,
+  digital: <App />,
+  features: <SolutionIcon />,
+  automation: <CloudUpload />,
+  mission: <SolutionIcon />,
+  framework: <TechnologiesIcon />,
+  vision: <SolutionIcon />,
+  governance: <Archive />,
+  integration: <Git />,
+  training: <BookOpen />,
+  architecture: <Src />,
+  kubernetes: <App />,
+  observability: <LogIcon />,
+  standards: <Archive />,
+  deployment: <Remote />,
   easy: <div className="bg-green-500 rounded-full h-[16px] w-[16px] blur-[1px]" />,
   medium: <div className="bg-yellow-500 rounded-full h-[16px] w-[16px] blur-[1px]" />,
   hard: <div className="bg-red-500 rounded-full h-[16px] w-[16px] blur-[1px]" />,
@@ -104,18 +131,26 @@ export default function Portfolio({ allApps, allLeetcode }: { allApps: MDXEntry<
     >
       {expanded && (
         <>
-          <Folder name="ansible" openIcon={<AnsibleOpen />} closedIcon={<Ansible />} indent={0} segmentActive={segments.length === 0}>
-            <File name="playbook.yml" icon={<YamlIcon />} url="/" indent={1} sections={[]} />
-            <Folder name="my_work" openIcon={<AnsibleOpen />} closedIcon={<Ansible />} indent={1} segmentActive={segments[0] === 'apps'}>
-              {/* {allApps.map((app) => (
-                <File key={app.pathname} name={app.title} icon={fileType[app.framework]} url={app.pathname} indent={2} sections={pathname === app.pathname ? sections : []} />
-              ))} */}
+          <Folder name="node_modules" openIcon={<NodeModules />} closedIcon={<NodeModules />} indent={0} segmentActive={false} disabled>
+          </Folder>
+          <Folder name="public" openIcon={<PublicOpen />} closedIcon={<Public />} indent={0} segmentActive={false}>
+            <File name="favicon.ico" icon={<FavIcon />} indent={1} sections={[]} />
+          </Folder>
+          <Folder name="src" openIcon={<SrcOpen />} closedIcon={<Src />} indent={0} segmentActive={pathname !== '/'}>
+            <Folder name="app" openIcon={<SrcOpen />} closedIcon={<Src />} indent={1} segmentActive={pathname !== '/'}>
+              <File name="layout.tsx" icon={<ReactIcon />} indent={2} sections={[]} />
+              <File name="page.tsx" icon={<ReactIcon />} url="/" indent={2} sections={pathname === '/' ? sections : []} />
+              <Folder name="projects" openIcon={<PublicOpen />} closedIcon={<Public />} indent={2} segmentActive={segments[0] === 'apps'}>
+                {allApps.map((app) => (
+                  <File key={app.pathname} name={app.title} icon={fileType[app.framework] || <FavIcon />} url={app.pathname} indent={3} sections={pathname === app.pathname ? sections : []} />
+                ))}
+              </Folder>
             </Folder>
           </Folder>
-          {staticFiles.map((file) => (
-            <File key={file.name} name={file.name} icon={file.icon} indent={0} sections={[]} />
-          ))}
-          <File name="readme.md" icon={<ReadmeIcon />} url="/" indent={0} sections={pathname === '/' ? sections : []} />
+          <File name=".gitignore" icon={<Git />} indent={0} sections={[]} />
+          <File name="next.config.js" icon={<NextConfig />} indent={0} sections={[]} />
+          <File name="package.json" icon={<NodeJs />} indent={0} sections={[]} />
+          <File name="tsconfig.json" icon={<TsConfig />} indent={0} sections={[]} />
         </>
       )}
     </SubCollapsableMenu>
@@ -227,13 +262,12 @@ function FileSection({ id, title, url }: { id: string; title: string; url: strin
         )}
         <Link href={`${url}#${id}`} className={clsx('flex items-center hover:text-gray-500 px-[4px] transition-colors duration-300', isVisible ? 'text-blue-100' : 'text-gray-500')}>
           {subSectionsIcons[splitId] ? <div className="mr-2">{subSectionsIcons[splitId]}</div> : <div className="mr-3 w-4" />}
-          <p className="leading-5">{title}</p>
+          <p className="leading-5">{title} [{splitId}]</p>
         </Link>
       </motion.div>
     </AnimatePresence>
   );
 }
-
 function FileContent({ name, icon, url, indent, active }: FileProps & { active: boolean }) {
   if (!url) {
     return (
@@ -244,7 +278,7 @@ function FileContent({ name, icon, url, indent, active }: FileProps & { active: 
   }
 
   return (
-    <Link href={url} scroll={false} style={{ paddingLeft: indent * 16 + 22 }} className={clsx(itemsCSS, active && 'bg-gray-200')}>
+    <Link href={url} scroll style={{ paddingLeft: indent * 16 + 22 }} className={clsx(itemsCSS, active && 'bg-gray-200')}>
       <div className="ml-4 mr-2 relative">{icon}</div> <p>{name}</p>
     </Link>
   );

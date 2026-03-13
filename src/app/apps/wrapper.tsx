@@ -1,10 +1,12 @@
-import { AppIntro, FadeIn, FadeInStagger, PageLinks, Section } from '@/components';
+import { AppIntro, FadeIn, FadeInStagger, PageLinks, ProjectSlider, Section } from '@/components';
 import { App, loadApps } from '@/lib/mdx';
-import Image from 'next/image';
 
 export default async function AppsLayout({ appData, children }: { appData: App; children: React.ReactNode }) {
   const allApps = await loadApps();
   const moreApps = allApps.filter(({ metadata }) => metadata.url !== appData.url).slice(0, 2);
+
+  // Use an array of 3 identical images for the slider as requested
+  const sliderImages = [appData.image, appData.image, appData.image];
 
   return (
     <div className="w-full overflow-y-auto overflow-x-hidden @container">
@@ -38,8 +40,8 @@ export default async function AppsLayout({ appData, children }: { appData: App; 
                     </dl>
                   </div>
                 </div>
-                <div className="p-4 @lg:p-12 @3xl:p-24 @6xl:p-32 app-gradient-bg">
-                  <Image src={appData.image} alt="" className="m-auto" sizes="(min-width: 1216px) 76rem, 100vw" priority />
+                <div className="p-0 app-gradient-bg h-[70vh] @3xl:h-[85vh] min-h-[500px] relative">
+                  <ProjectSlider images={appData.images || [appData.image]} />
                 </div>
               </FadeIn>
             </FadeInStagger>

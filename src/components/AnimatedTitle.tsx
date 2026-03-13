@@ -64,17 +64,13 @@ export default function AnimatedTitle() {
   return (
     <div className="flex text-blue-100">
       <motion.div variants={list} initial="hidden" animate={cloud}>
-        <WriteWord word="Cloud" />
+        <WriteWord word="IT Consultant" />
       </motion.div>
       <motion.div variants={list} initial="hidden" animate={system}>
-        <WriteWord word="System" />
+        <WriteWord word="Project Manager" />
       </motion.div>
       <motion.div variants={list} initial="hidden" animate={devops}>
-        <WriteWord word="DevOps" />
-      </motion.div>
-      <div className="text-transparent">a</div>
-      <motion.div variants={list} initial="hidden" animate={web}>
-        <WriteWord word="Engineer" />
+        <WriteWord word="Professional Instructor" />
       </motion.div>
     </div>
   );
@@ -88,7 +84,7 @@ const item = {
 function WriteWord({ word, ...props }: React.ComponentPropsWithoutRef<typeof motion.div> & { word: string }) {
   return word.split('').map((letter, index) => (
     <motion.div key={index} variants={item} {...props}>
-      {letter}
+      {letter === ' ' ? '\u00A0' : letter}
     </motion.div>
   ));
 }

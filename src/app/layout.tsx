@@ -11,8 +11,8 @@ import { Toaster } from 'react-hot-toast';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Jody Portfolio',
-  description: 'Jody Porfolio',
+  title: 'Jody | IT Project Manager & Infrastructure Expert',
+  description: 'IT Project Manager specialized in infrastructure design, operational leadership, and technology-driven business transformation.',
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

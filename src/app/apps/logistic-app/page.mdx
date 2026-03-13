@@ -1,0 +1,153 @@
+import { AppSolution, Border, Button, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { logisticApp, logisticLogin, logisticDashboard, logisticEkspedisi, logisticLaporan } from '../../../../public/projects';
+
+export const appData = {
+  industry: 'Logistics / Supply Chain',
+  title: 'Logistic App',
+  description: 'A comprehensive logistics management system for PT Halton Bintang Timur Cargo, featuring complex cargo calculations, automated financials, and secure remote access via FRP.',
+  image: logisticDashboard,
+  images: [logisticLogin, logisticDashboard, logisticEkspedisi, logisticLaporan],
+  date: '2026-01',
+  service: 'System Architecture & Backend Development',
+  url: '#',
+  pathname: '/apps/logistic-app',
+  framework: 'laravel',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'System Architecture', id: 'architecture' },
+  { index: 2, title: 'Automation & Finance', id: 'automation' },
+  { index: 3, title: 'Deployment & Security', id: 'deployment' },
+  { index: 4, title: 'Visual Gallery', id: 'gallery' },
+  { index: 5, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  { name: 'Laravel', image: '/logos/laravel.png' },
+  { name: 'PHP', image: '/logos/php.png' },
+  { name: 'MySQL', image: '/logos/mysql.png' },
+  { name: 'LXC', image: '/logos/lxc.png' },
+  { name: 'Nginx', image: '/logos/nginx.png' },
+  { name: 'FRP', image: '/logos/frp.png' }, 
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="architecture">
+    ## System Architecture
+
+    Developed for **PT Halton Bintang Timur Cargo**, the system centers on a robust **Laravel-driven backend** designed to handle the high throughput and complexity of modern logistics:
+    
+    - **Complex Calculations**: Implementation of intricate algorithms for cargo volume, weight-based pricing, and multi-modal transport costs.
+    - **Shipment Tracking**: Real-time lifecycle management of shipments, from initial booking to final delivery confirmation.
+    - **Custom Reporting**: A specialized dashboard that aggregates real-time expedition data into actionable inventory and status insights.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="automation">
+    ## Automated Financials
+
+    A key objective was the digital transformation of manual billing cycles to eliminate human error and accelerate cash flow:
+    
+    - **Invoice Generation**: Automated creation of multi-currency invoices based on real-time shipment data and contracted rates.
+    - **Financial Reporting**: Comprehensive modules that provide instant visibility into revenue, pending payments, and operational costs.
+    - **Cycle Optimization**: Significantly reduced the time from delivery to billing by integrating operational logs directly with the financial module.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="deployment">
+    ## Deployment & Security
+
+    The application is hosted on a specialized infrastructure tailored for efficiency and secure remote access:
+    
+    - **LXC (Linux Containers)**: Utilizing lightweight, isolated containers for resource-efficient hosting that maintains high performance under load.
+    - **FRP (Fast Reverse Proxy)**: Configuration of a secure bridge to expose the local server environment to public access without compromising internal network integrity.
+    - **Load Balancing**: Integrated load balancing capabilities to ensure system availability during peak expedition periods.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="gallery">
+    ## Visual Gallery
+
+    <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10" faster once>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={logisticLogin} alt="Login Screen" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Secure Authentication Interface</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={logisticDashboard} alt="Main Dashboard" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Real-time Insights Dashboard</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={logisticEkspedisi} alt="Expedition Data" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Expedition & Tracking Management</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={logisticLaporan} alt="Financial Report" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Automated Financial Reporting</p>
+        </div>
+      </FadeIn>
+    </FadeInStagger>
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>

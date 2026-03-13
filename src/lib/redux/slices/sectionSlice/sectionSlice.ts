@@ -42,6 +42,8 @@ export const sectionSlice = createSlice({
     },
     setVisible: (state, action: PayloadAction<{ key: string }>) => {
       let item = current(state.sections).find((val) => val.id === action.payload.key) as Section;
+      if (!item) return;
+
       let newArr = [...current(state.sectionsOrder)] as Section[];
       if (newArr.length === 0) {
         newArr.push(item);
@@ -67,10 +69,10 @@ export const sectionSlice = createSlice({
     setHidden: (state, action: PayloadAction<{ key: string }>) => {
       let newArr = [...current(state.sectionsOrder)] as Section[];
       let itemIndex = newArr.findIndex((val) => val.id === action.payload.key);
+      if (itemIndex === -1) return;
+
       //Insert before items with lower index value in Section[]
-      if (itemIndex !== undefined) {
-        newArr.splice(itemIndex, 1);
-      }
+      newArr.splice(itemIndex, 1);
       return {
         sections: state.sections,
         sectionsOrder: newArr,

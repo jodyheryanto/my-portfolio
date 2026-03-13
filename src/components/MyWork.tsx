@@ -2,7 +2,7 @@
 import { ExpandArrowLink, GlowCard } from '@/components';
 import clsx from 'clsx';
 import Image, { StaticImageData } from 'next/image';
-import { impulseux, leenithBorges, leenithIos, loteriaMonarca, realtorSimplified, sierraEcomaderas, template1 } from '../../public/projects/';
+import { airportHero, certSchemeList, cloudArchitecture, eaFinalReport, govLanding, logisticDashboard } from '../../public/projects/';
 
 interface Project {
   href: string;
@@ -16,53 +16,46 @@ interface Project {
 
 const projects: Project[] = [
   {
-    href: '/apps/realtor-simplified',
-    name: 'Realtor Simplified',
+    href: '/apps/logistic-app',
+    name: 'Logistic App',
     full: true,
-    description: ' saas platform that enables realtors to deploy a professional website in minutes.',
-    image: { src: realtorSimplified },
+    description: ' for cargo calculations, shipment tracking, and automated financial reporting.',
+    image: { src: logisticDashboard },
   },
   {
-    href: '/apps/loteria-monarca',
-    name: 'Loteria Monarca',
+    href: '/apps/certification-management',
+    name: 'Certification System',
     full: true,
-    description: ' online platform to register and play Loteria Mexicana.',
-    image: { src: loteriaMonarca },
+    description: ' for professional certification lifecycle management and BNSP compliance.',
+    image: { src: certSchemeList },
   },
   {
-    href: '/apps/realtor-template-1',
-    name: 'Realtor Template',
+    href: '/apps/enterprise-architecture',
+    name: 'Enterprise Architecture',
     full: false,
-    description: ' deployable template on the realtor simplified platform.',
-    image: { src: template1 },
+    description: ' for digital transformation and SSoT governance at UNS.',
+    image: { src: eaFinalReport },
   },
   {
-    href: '/apps/sierra-ecomaderas',
-    name: 'Sierra Ecomanderas',
+    href: '/apps/cloud-infrastructure',
+    name: 'Scalable Cloud Design',
     full: false,
-    description: ' static website for a wood selling bussiness.',
-    image: { src: sierraEcomaderas },
+    description: ' and lifecycle management for enterprise-grade high-availability services.',
+    image: { src: cloudArchitecture },
   },
   {
-    href: '/apps/leenith-borges',
-    name: 'Leenith',
-    full: true,
-    description: ' e-commerce website to manage, and sell courses online.',
-    image: { src: leenithBorges },
-  },
-  {
-    href: '/apps/leenith-borges',
-    name: 'Leenith IOS',
+    href: '/apps/government-implementation',
+    name: 'Government Modernization',
     full: false,
-    description: ' ios app to access and buy courses.',
-    image: { src: leenithIos },
+    description: ' modernization of IT infrastructure for Ministry of Internal Affairs.',
+    image: { src: govLanding },
   },
   {
-    href: '/apps/impulseux',
-    name: 'ImpulseUX',
+    href: '/apps/soa-bajawa-airport',
+    name: 'Soa Bajawa Airport',
     full: false,
-    description: ' static website for design and development agency.',
-    image: { src: impulseux },
+    description: ' digital presence and official portal for UPBU Kelas III Soa Bajawa.',
+    image: { src: airportHero },
   },
 ];
 

@@ -4,8 +4,20 @@ import { default as Image } from 'next/image';
 
 const experience = [
   {
-    title: 'The Big Rich Group | Infrastructure Manager.',
-    date: 'Feb 2023 - Present',
+    title: 'PT Atlasfizl Meraki Inovasi | IT Consultant & Professional Instructor',
+    date: 'Dec 2024 - Present',
+    description: [
+      'Assess & Analyze IT Systems - Evaluate client infrastructure, identify inefficiencies, and recommend improvements.',
+      'Develop & Implement IT Solutions - Design, deploy, and integrate technology solutions aligned with business needs.',
+      'Enhance Security & Compliance - Ensure cybersecurity measures and regulatory compliance for IT systems.',
+      'Manage IT Projects - Oversee IT initiatives, coordinate with stakeholders, and ensure timely execution.',
+      'Provide Training & Support - Educate teams on new technologies and offer ongoing technical assistance.',
+    ],
+    image: { url: '/work/atlasfizl.jpeg', height: 96, width: 96, className: 'bg-white' },
+  },
+  {
+    title: 'Alturian Group | Infrastructure Manager',
+    date: 'Feb 2023 - Nov 2024',
     description: [
       'Supervise and mentor a team of infrastructure engineers and administrators. Foster professional development and manage team performance.',
       'Oversee the deployment, configuration, and maintenance of servers, storage systems, and networking components to ensure high availability and performance.',
@@ -13,43 +25,31 @@ const experience = [
       'Spearheaded the migration of over 50 servers to a cloud-based infrastructure, enhancing system scalability and reliability while reducing operational costs by 30%.',
       'Spearheaded the migration of 20+ servers to a cloud-based infrastructure improving system uptime to 99.9% through the implementation of robust monitoring and automation tools.',
     ],
-    image: { url: '/work/tbrg.jpeg', height: 96, width: 96, className: '' },
+    image: { url: '/work/alturian.png', height: 96, width: 96, className: '' },
   },
   {
-    title: 'The Big Rich Group | Head of IT Infrastructure.',
-    date: 'July 2022 - Feb 2023',
+    title: 'Alturian Group | Head of IT Infrastructure',
+    date: 'Jul 2022 - Feb 2023',
     description: [
       'Develop and implement the IT infrastructure strategy aligned with organizational goals. Plan and manage the budget for infrastructure projects and operational expenses.',
       'Designed and implemented a robust IT infrastructure strategy, resulting in a 35% increase in system uptime and a 20% reduction in operational costs over a two-year span using virtualization technologies and cloud solutions.',
-      'Directed the overhaul of the company`s IT infrastructure, including the deployment of a new cloud-based system that improved data accessibility and security, leading to a 35% reduction in operational costs and a 50% increase in overall system uptime.',
+      'Directed the overhaul of the company\'s IT infrastructure, including the deployment of a new cloud-based system that improved data accessibility and security, leading to a 35% reduction in operational costs and a 50% increase in overall system uptime.',
     ],
-    image: { url: '/work/tbrg.jpeg', height: 96, width: 96, className: '' },
+    image: { url: '/work/alturian.png', height: 96, width: 96, className: '' },
   },
   {
-    title: 'The Big Rich Group | System Administrator.',
-    date: 'Apr 2022 - July 2022',
+    title: 'Alturian Group | System Administrator & Junior System Administrator',
+    date: 'May 2021 - Jul 2022',
     description: [
       'Implemented and maintained server with zero downtimes through consistent performance monitoring and troubleshooting.',
       'Diagnosed and alleviated performance issues by deploying automated alerts and diagnostic scripts, thereby enhancing system reliability by 15%.',
       'Led successful system upgrades and migrations using best practices, achieving a 20% increase in system performance through streamlined software updates.',
       'Implemented IT compliance methodologies across system operations ensuring adherence to industry standards and organizational policies.',
     ],
-    image: { url: '/work/tbrg.jpeg', height: 96, width: 96, className: '' },
+    image: { url: '/work/alturian.png', height: 96, width: 96, className: '' },
   },
   {
-    title: 'The Big Rich Group | Junior System Administrator.',
-    date: 'May 2021 - Apr 2022',
-    description: [
-      'Managed hardware and software maintenance schedules, implementing automated updates to ensure optimal system performance consistently.',
-      'Developed and maintained documentation for access control processes, ensuring compliance with policies and simplifying audits.',
-      'Configured and upgraded system software, ensuring seamless operations and compliance with protocols.',
-      'Conducted routine system monitoring and performed necessary upgrades to vulnerabilities, boosting system efficiency by 15%.',
-      'Utilizing tools such as VPNs, firewalls, and intrusion detection systems (IDS).',
-    ],
-    image: { url: '/work/tbrg.jpeg', height: 96, width: 96, className: '' },
-  },
-  {
-    title: 'Mercu Buana University | Laboratory Assistant.',
+    title: 'Universitas Mercu Buana | Laboratory Assistant',
     date: 'Jan 2019 - Jan 2021',
     description: [
       'Provide on-site and remote technical support for hardware, software, and network issues within the laboratory environment.',
@@ -125,7 +125,7 @@ function WorkRole({ children, title, date, image }: { children: React.ReactNode;
             <p className="@lg:hidden mt-2 text-white text-sm">{date}</p>
           </div>
         </div>
-        <ul className="list-disc pl-10">{children}</ul>
+        <ul className="list-disc pl-10 text-justify">{children}</ul>
       </Border>
     </FadeIn>
   );

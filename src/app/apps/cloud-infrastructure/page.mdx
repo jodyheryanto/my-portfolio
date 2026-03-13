@@ -1,0 +1,166 @@
+import { Border, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { cloudArchitecture, cloudSignin, cloudDetail, cloudTable, cloudBalance } from '../../../../public/projects';
+
+export const appData = {
+  industry: 'Investment / FinTech',
+  title: 'Scalable Cloud Infrastructure',
+  description: 'Design and lifecycle management of enterprise-grade cloud infrastructure for CAMP Investment, featuring Kubernetes orchestration, AWS management, and a robust observability stack.',
+  image: cloudArchitecture,
+  images: [cloudArchitecture, cloudSignin, cloudTable, cloudBalance],
+  date: '2025-04',
+  service: 'Cloud Architecture & Lifecycle Management',
+  url: '#',
+  pathname: '/apps/cloud-infrastructure',
+  framework: 'kubernetes',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Architecture Design', id: 'architecture' },
+  { index: 2, title: 'Kubernetes & AWS', id: 'infrastructure' },
+  { index: 3, title: 'Automation & CI/CD', id: 'automation' },
+  { index: 4, title: 'Observability Stack', id: 'observability' },
+  { index: 5, title: 'Visual Gallery', id: 'gallery' },
+  { index: 6, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  { name: 'Kubernetes (EKS)', image: '/logos/kubernetes.png' },
+  { name: 'AWS', image: '/logos/aws.png' },
+  { name: 'GitLab CI', image: '/logos/gitlab.png' },
+  { name: 'Prometheus', image: '/logos/prometheus.png' },
+  { name: 'Grafana', image: '/logos/grafana.png' },
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="architecture">
+    ## Infrastructure Design & Solution Architecture
+
+    As the **Solutions Architect / Cloud Infrastructure Engineer**, I led the design and lifecycle management of a modular, cost-efficient, and scalable infrastructure blueprint:
+    
+    - **Cloud-Native Best Practices**: Developed a blueprint aligned with business needs, optimizing compute, networking, and object storage.
+    - **High Availability**: Shaped a cloud-native architecture designed for high-availability business services across staging and production.
+    - **Scalability Protocol**: Implemented multi-zone deployment strategies to ensure institutional-grade resilience and performance.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="infrastructure">
+    ## Kubernetes & AWS Management
+
+    Leveraging the power of container orchestration and cloud-native services for high-performance environment provisioning:
+    
+    - **EKS Orchestration**: Provisioned and maintained containerized environments using **Amazon EKS**, enabling auto-scaling and zero-downtime deployments.
+    - **Resource Management**: Managed full AWS stack including **EC2**, **RDS**, and **S3**, with a rigorous focus on performance tuning and cost control.
+    - **Environment Isolation**: Established distinct staging and production environments with strict network isolation and IAM policies.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="automation">
+    ## CI/CD Automation & Security
+
+    Streamlining the development lifecycle through automated pipelines and robust security enforcement:
+    
+    - **GitLab CI/CD**: Designed automated pipelines for testing, code validation, and multi-environment deployments with instant rollback support.
+    - **Security & Compliance**: Enforced cloud security standards including TLS encryption, network isolation, and vulnerability assessments.
+    - **Documentation**: Authored detailed runbooks and operation manuals to ensure sustainable infrastructure management and knowledge transfer.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="observability">
+    ## Monitoring & Observability Stack
+
+    Implementing a comprehensive observability ecosystem for proactive incident response and real-time visibility:
+    
+    - **Observability Stack**: Deployed **Prometheus** and **Grafana** for real-time metrics, paired with **Sentry** for error tracking.
+    - **Proactive Alerting**: Configured **Uptime Kuma** and webhook alerting to ensure instant response to service disruptions.
+    - **Performance Tuning**: utilized real-time data to tune database performance and application throughput across the AWS environment.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="gallery">
+    ## Visual Gallery
+
+    <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10" faster once>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={cloudArchitecture} alt="Infrastructure Diagram" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Cloud Solution Architecture Blueprint</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={cloudSignin} alt="Authentication Screen" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Secure Portal Authentication</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={cloudBalance} alt="Admin Dashboard" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Infrastructure & Balance Monitoring</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={cloudTable} alt="Transaction Management" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">System Transaction Logs & Auditing</p>
+        </div>
+      </FadeIn>
+    </FadeInStagger>
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>

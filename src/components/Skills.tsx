@@ -6,96 +6,51 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 const skills = [
-  { skill: 'Languages', buttonClassNames: 'rounded-tl-full', textClassNames: '-translate-x-5' },
-  { skill: 'IaaC', buttonClassNames: 'rounded-tr-full', textClassNames: 'translate-x-3 translate-y-1' },
-  { skill: 'CI/CD', buttonClassNames: 'rounded-bl-full', textClassNames: 'translate-x-8 -translate-y-3' },
-  { skill: 'Tools', buttonClassNames: 'rounded-br-full', textClassNames: 'translate-x-3 -translate-y-3' },
+  { skill: 'Strategy', buttonClassNames: 'rounded-tl-full' },
+  { skill: 'Infra', buttonClassNames: 'rounded-tr-full' },
+  { skill: 'Cyber', buttonClassNames: 'rounded-bl-full' },
+  { skill: 'Education', buttonClassNames: 'rounded-br-full' },
 ];
 
 const skillsLogos = {
-  ['Languages' as string]: [
-    {
-      name: 'Vue.js',
-      image: '/logos/vue.png',
-    },
-    {
-      name: 'Angular.js',
-      image: '/logos/angular.png',
-    },
-    {
-      name: 'Laravel',
-      image: '/logos/laravel.png',
-    },
-    {
-      name: 'Python',
-      image: '/logos/python-logo.png',
-    },
-    {
-      name: 'Bash',
-      image: '/logos/bash.png',
-    },
+  ['Strategy' as string]: [
+    { name: 'IT Project Management', image: '/logos/project-management.jpg' },
+    { name: 'IT Governance (TOGAF)', image: '/logos/it-governance.png' },
+    { name: 'Enterprise Architecture', image: '/logos/togaf.png' },
+    { name: 'Risk Management', image: '/logos/risk.png' },
   ],
-  ['IaaC' as string]: [
-    {
-      name: 'Ansible',
-      image: '/logos/ansible.png',
-    },
-    {
-      name: 'Terraform',
-      image: '/logos/terraform.png',
-    },
+  ['Infra' as string]: [
+    { name: 'LXC Proxmox', image: '/logos/proxmox.png' },
+    { name: 'Kubernetes', image: '/logos/kubernetes.png' },
+    { name: 'Alibaba Cloud', image: '/logos/alibaba.png' },
+    { name: 'AWS', image: '/logos/aws.png' },
+    { name: 'GCP', image: '/logos/gcp.png' },
+    { name: 'Docker', image: '/logos/docker-logo.png' },
+    { name: 'Gitlab CI/CD', image: '/logos/gitlab-cicd.png' },
   ],
-  ['CI/CD' as string]: [
-    {
-      name: 'Gitlab CI/CD',
-      image: '/logos/gitlab-cicd.png',
-    },
-    {
-      name: 'Jenkins',
-      image: '/logos/jenkins.png',
-    },
+  ['Cyber' as string]: [
+    { name: 'Network Security', image: '/logos/security.jpg' },
+    { name: 'FRP Tunnel', image: '/logos/frp.png' },
+    { name: 'Vulnerability Assessment', image: '/logos/vulnerability.png' },
+    { name: 'Penetration Testing', image: '/logos/pentest.png' },
   ],
-  ['Tools' as string]: [
-    {
-      name: 'Git',
-      image: '/logos/git-logo.png',
-    },
-    {
-      name: 'Gitlab',
-      image: '/logos/gitlab.png',
-    },
-    { 
-      name: 'Docker', 
-      image: '/logos/docker-logo.png' 
-    },
-    { 
-      name: 'Kubernetes', 
-      image: '/logos/kubernetes.png' 
-    },
-    { 
-      name: 'Proxmox', 
-      image: '/logos/proxmox.png' 
-    },
-    { 
-      name: 'Cisco', 
-      image: '/logos/cisco.png' 
-    },
-    { 
-      name: 'Mikrotik', 
-      image: '/logos/mikrotik.png' 
-    },
+  ['Education' as string]: [
+    { name: 'Instructional Design', image: '/logos/instructional-design.jpg' },
+    { name: 'Public Speaking', image: '/logos/public-speaking.jpg' },
+    { name: 'Training & Development', image: '/logos/training.png' },
+    { name: 'Coaching', image: '/logos/coaching.jpg' },
   ],
 };
 
 const skillsTitles = {
-  ['Languages' as string]: 'Programming Languages',
-  ['IaaC' as string]: 'Infrastructure as a Code (IaaC)',
-  ['CI/CD' as string]: 'CI/CD Automations',
-  ['Tools' as string]: 'Tools',
+  ['Strategy' as string]: 'Strategy & Management',
+  ['Infra' as string]: 'Infrastructure & Cloud',
+  ['Cyber' as string]: 'Cybersecurity',
+  ['Education' as string]: 'Education & Instruction',
 };
 
 export default function Skills() {
-  const [activeSkill, setActiveSkill] = useState('Languages');
+  const [activeSkill, setActiveSkill] = useState('Strategy');
   const controls = useAnimationControls();
 
   const handleChangeSkill: React.MouseEventHandler<HTMLButtonElement> = async (e) => {
@@ -115,8 +70,12 @@ export default function Skills() {
         <div className="skills-picker w-[325px] m-[10px] h-[325px] col-span-3 row-span-3 place-self-center isolate">
           <div className="rounded-full inset-6 absolute grid grid-cols-2 p-2 gap-2 rotate-45">
             {skills.map((skill) => (
-              <button onClick={handleChangeSkill} key={skill.skill} className={clsx('rounded-[500px] skills-buttons', skill.buttonClassNames, activeSkill === skill.skill && 'skills-buttons-active')}>
-                <p className={clsx('text-3xl text-white font-semibold tracking-wide w-min -rotate-45', skill.textClassNames)}>
+              <button
+                onClick={handleChangeSkill}
+                key={skill.skill}
+                className={clsx('flex items-center justify-center rounded-[500px] skills-buttons', skill.buttonClassNames, activeSkill === skill.skill && 'skills-buttons-active')}
+              >
+                <p className={clsx('text-2xl text-white font-semibold tracking-wide whitespace-nowrap -rotate-45')}>
                   {skill.skill}
                   <span className={clsx('transition-all duration-300 -z-10 bg-[#525df3] absolute bottom-0 left-0 right-0 w-full', activeSkill === skill.skill ? 'h-[18px]' : 'h-[2px]')}></span>
                 </p>

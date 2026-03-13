@@ -1,0 +1,148 @@
+import { Border, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { govLanding, govProfile, govService } from '../../../../public/projects';
+
+export const appData = {
+  industry: 'E-Government / Public Sector',
+  title: 'Government Modernization Report',
+  description: 'Full-stack modernization of the Ministry of Internal Affairs IT infrastructure, integrating Nutanix virtualization, Kubernetes orchestration, and automated CI/CD pipelines.',
+  image: govLanding,
+  images: [govLanding, govProfile, govService],
+  date: '2024-10',
+  service: 'IT Project Manager & Infrastructure Engineer',
+  url: '#',
+  pathname: '/apps/government-implementation',
+  framework: 'nutanix',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Project Management', id: 'management' },
+  { index: 2, title: 'Infrastructure Modernization', id: 'infrastructure' },
+  { index: 3, title: 'DevOps & Observability', id: 'devops' },
+  { index: 4, title: 'Visual Gallery', id: 'gallery' },
+  { index: 5, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  { name: 'Nutanix AHV', image: '/logos/nutanix.png' },
+  { name: 'Kubernetes', image: '/logos/kubernetes.png' },
+  { name: 'GitLab CI', image: '/logos/gitlab.png' },
+  { name: 'Nginx', image: '/logos/nginx.png' },
+  { name: 'MinIO', image: '/logos/minio.png' },
+  { name: 'Prometheus', image: '/logos/prometheus.png' },
+  { name: 'Grafana', image: '/logos/grafana.png' },
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="management">
+    ## Project Management Leadership
+
+    As the **IT Project Manager & Infrastructure Engineer**, I spearheaded a hybrid modernization initiative for the **Ministry of Internal Affairs**:
+    
+    - **Lifecycle Spearheading**: Managed the entire project lifecycle, from strategic planning and budgeting to technical execution and final delivery.
+    - **Cross-Functional Coordination**: Led infrastructure, DevOps, and security teams across a hybrid onsite/remote environment.
+    - **Strategic Communication**: Delivered technical-to-nontechnical translations for stakeholders, ensuring alignment on digital transformation goals.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="infrastructure">
+    ## Infrastructure Modernization
+
+    Implemented a robust hybrid environment to support state-level public services with high reliability:
+    
+    - **Nutanix Virtualization**: Provisioned robust dev/prod environments on **Nutanix AHV** virtual infrastructure.
+    - **Kubernetes Orchestration**: Deployed containerized services with Kubernetes, ensuring isolated and scalable application environments.
+    - **Secure Load Handling**: Leveraged **Nginx** for high-performance reverse proxying, load balancing, and SSL termination.
+    - **High-Availability Storage**: Integrated **MinIO** as an S3-compatible object storage layer with strict backup policies.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="devops">
+    ## DevOps Engineering & Observability
+
+    Enforced institutional-grade automation and visibility across the entire hybrid stack:
+    
+    - **CI/CD Automation**: Engineered **GitLab CI** pipelines for standardized code deployment, multi-environment testing, and rapid rollbacks.
+    - **Observability Stack**: Deployed **Prometheus** and **Grafana** for real-time visibility, paired with **Sentry** for granular error tracking.
+    - **Infrastructure as Code (IaC)**: Automated provisioning using declarative tools to eliminate manual errors and minimize recovery time.
+    - **Security Enforcement**: Applied IAM principles, TLS encryption, and network segmentation to ensure rigorous compliance.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="gallery">
+    ## Visual Gallery
+
+    <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10" faster once>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={govLanding} alt="SILPPD Portal" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">SILPPD V2.0 - National Reporting Portal</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={govProfile} alt="Government Profile" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Regional Government Management Interface</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2 md:col-span-2">
+        <div className="aspect-[3/2] md:aspect-[3/1] overflow-hidden rounded-xl">
+          <Image src={govService} alt="Service Definition" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Core Public Service Service Definition & Data Schema</p>
+        </div>
+      </FadeIn>
+    </FadeInStagger>
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>

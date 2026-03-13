@@ -1,0 +1,166 @@
+import { Border, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { eaFinalReport, eaPresentation, eaStakeholders, eaTeam } from '../../../../public/projects';
+
+export const appData = {
+  industry: 'Education / Digital Transformation',
+  title: 'Enterprise Architecture Project',
+  description: 'A strategic digital transformation initiative at Universitas Sebelas Maret (UNS), implementing TOGAF 10 standards and ArchiMate 3.2 to establish cross-unit data governance and SSoT.',
+  image: eaFinalReport,
+  images: [eaFinalReport, eaPresentation, eaStakeholders, eaTeam],
+  date: '2025-09',
+  service: 'Digital Transformation & EA Governance',
+  url: '#',
+  pathname: '/apps/enterprise-architecture',
+  framework: 'archi',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Vision & SSoT', id: 'vision' },
+  { index: 2, title: 'EA Governance', id: 'governance' },
+  { index: 3, title: 'Data & Integration', id: 'integration' },
+  { index: 4, title: 'Training & Coaching', id: 'training' },
+  { index: 5, title: 'Visual Gallery', id: 'gallery' },
+  { index: 6, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  { name: 'Archi (ArchiMate)', image: '/logos/archi-logo.png' },
+  { name: 'Figma', image: '/logos/figma-logo.png' },
+  { name: 'ClickUp', image: '/logos/clickup-logo.png' },
+  { name: 'TOGAF 10', image: '/logos/togaf-logo.png' },
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="vision">
+    ## Architecture Vision & SSoT
+
+    As the **Enterprise Architect & Coach (EA Lead)**, the primary focus was aligning the university's digital strategy with a unified architectural vision:
+    
+    - **Stakeholder Alignment**: Led cross-unit kick-off meetings involving the Rectorate, Faculties, and Service Units to synchronize digital transformation priorities.
+    - **Single Source of Truth (SSoT)**: Defined the vision for a robust data layer centered on SSoT for student and staff IDs, ensuring data consistency across all university systems.
+    - **Strategy Mapping**: Identified and mapped critical requirements for marketing dashboards and data governance frameworks.
+    - **Learning Continuity**: Optimized digital architectures for distance learning to ensure seamless academic continuity.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="governance">
+    ## EA Governance & Standards
+
+    Establishing a sustainable governance framework was essential for the long-term success of the digital transformation:
+    
+    - **Governance Framework**: Established EA governance based on **TOGAF ADM** principles and an extensive standards catalog.
+    - **Architecture Review Board (ARB)**: Formed the ARB to oversee decision rights, architecture principles, and change management flows.
+    - **Standardization**: Created a reusable ArchiMate viewpoint library and standard TOGAF deliverables including Statement of Architecture Work and Architecture Definition.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="integration">
+    ## Data Governance & Integration
+
+    Designed the underlying integration patterns to support the university's SSoT objectives:
+    
+    - **MDM Blueprint**: Designed the Data Governance and Master Data Management (MDM) blueprint for unified SSoT.
+    - **Integration Patterns**: Implemented modern integration patterns using APIs and messaging to bridge core systems: **SIMAK** (Academic), **SIMPEG** (Personnel), **SIMKEU** (Finance), and **LMS**.
+    - **Canonical Data Model**: Developed a canonical data model to standardize data exchange across diverse institutional units.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="training">
+    ## Training & Professional Coaching
+
+    Beyond architecture, the project focused on capacity building and professional certification within the university team:
+    
+    - **BNSP Certification Coaching**: Delivered structured training for Enterprise Architecture certification aligned with **SKKNI/BNSP** standards.
+    - **Curriculum Development**: Developed the curriculum and assessment instruments (observation, portfolio/RPL, and interviews).
+    - **Coaching Clinic**: Conducted mock assessments and evidence preparation clinics to ensure team readiness for professional certification.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="gallery">
+    ## Visual Gallery
+
+    <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10" faster once>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={eaPresentation} alt="Kick-off Presentation" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Kick-off & Stakeholder Alignment</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={eaStakeholders} alt="Stakeholder Meeting" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Strategic Planning Workshop</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={eaFinalReport} alt="Final Report Delivery" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Official Handover of EA Deliverables</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={eaTeam} alt="EA Project Team" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">UNS Digital Transformation Team</p>
+        </div>
+      </FadeIn>
+    </FadeInStagger>
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>

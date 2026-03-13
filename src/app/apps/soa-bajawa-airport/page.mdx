@@ -1,0 +1,151 @@
+import { Border, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { airportHero, airportInfo, airportNews, airportProfile } from '../../../../public/projects';
+
+export const appData = {
+  industry: 'Aviation / Government Services',
+  title: 'Soa Bajawa Airport Portal',
+  description: 'Developing a comprehensive digital presence for UPBU Kelas III Soa Bajawa using WordPress, focused on public information transparency and operational visibility.',
+  image: airportHero,
+  images: [airportHero, airportNews, airportProfile, airportInfo],
+  date: '2025-09',
+  service: 'WordPress Engineer',
+  url: '#',
+  pathname: '/apps/soa-bajawa-airport',
+  framework: 'wordpress',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Project Goals', id: 'goals' },
+  { index: 2, title: 'Digital Presence', id: 'digital' },
+  { index: 3, title: 'Features & Transparency', id: 'features' },
+  { index: 4, title: 'Visual Gallery', id: 'gallery' },
+  { index: 5, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  { name: 'WordPress', image: '/logos/wordpress.png' },
+  { name: 'PHP', image: '/logos/php.png' },
+  { name: 'MySQL', image: '/logos/mysql.png' },
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="goals">
+    ## Strategic Digital Presence
+
+    As the **WordPress Engineer**, I developed the official introduction website for **Soa Bajawa Airport (UPBU Kelas III Soa Bajawa)** to bridge the gap between airport operations and public information:
+    
+    - **Visibility Enhancement**: Established a professional online presence to improve discoverability for travelers and stakeholders.
+    - **Information Accessibility**: Built a centralized portal for real-time airport services, facilities, and operational updates.
+    - **Regional Connectivity**: Promoted the airport's role as a vital hub for regional development and community connectivity.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="digital">
+    ## Web Engineering & Design
+
+    The project focused on creating a user-centric experience that complies with government standards for transparency:
+    
+    - **CMS Implementation**: Leveraged **WordPress** for a scalable and manageable content system, allowing airport staff to update news and announcements easily.
+    - **Custom Configuration**: Tailored themes and plugin configurations to meet the specific branding and functional needs of UPBU Kelas III.
+    - **Responsive Design**: Ensured seamless accessibility across desktops, tablets, and mobile devices to accommodate travelers on the go.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="features">
+    ## Features & Public Transparency
+
+    Implemented key modules to support government transparency and public information needs:
+    
+    - **Dynamic News Portal**: A dedicated section for "Berita & Pengumuman" to communicate local events, operational changes, and announcements.
+    - **Official Profile Systems**: Clear presentation of airport history, vision, mission, and organizational structure (Profil PPID).
+    - **Public Information Workflow**: Integrated alur permintaan informasi (Public Information Flow) to comply with regional governance standards.
+    - **Search Engine Optimization (SEO)**: Optimized content structure for better discoverability and authoritative ranking on search engines.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="gallery">
+    ## Visual Gallery
+
+    <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10" faster once>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={airportHero} alt="Official Homepage" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Official Portal - Welcome Interface</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={airportNews} alt="News Section" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Berita & Pengumuman - Operational Updates</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={airportProfile} alt="Airport Profile" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Profil Bandara - Facilities & Infrastructure</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={airportInfo} alt="Public Information" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">PPID Workflow - Public Information Transparency</p>
+        </div>
+      </FadeIn>
+    </FadeInStagger>
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>

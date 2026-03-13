@@ -1,0 +1,138 @@
+import { AppSolution, Border, Button, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { certLanding, certLogin, certSchemeList, certUnitComp } from '../../../../public/projects';
+
+export const appData = {
+  industry: 'Professional Certification',
+  title: 'Certification Management System',
+  description: 'An end-to-end web-based platform for professional certification processes, supporting candidate registration, document verification, and certificate issuance in compliance with national standards.',
+  image: certSchemeList,
+  images: [certLanding, certLogin, certSchemeList, certUnitComp],
+  date: '2025-04',
+  service: 'Full-Stack Development & Infrastructure Management',
+  url: '#',
+  pathname: '/apps/certification-management',
+  framework: 'next',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Project Scope', id: 'scope' },
+  { index: 2, title: 'Infrastructure & Standards', id: 'standards' },
+  { index: 3, title: 'Visual Gallery', id: 'gallery' },
+  { index: 4, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  { name: 'Next.js', image: '/logos/nextjs-logo.png' },
+  { name: 'React', image: '/logos/react-logo.png' },
+  { name: 'Node.js', image: '/logos/node.png' },
+  { name: 'PostgreSQL', image: '/logos/postgres.png' },
+  { name: 'Docker', image: '/logos/docker-logo.png' },
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="scope">
+    ## Project Scope
+
+    Developed for **Lembaga Sertifikasi Profesi TIBD**, this platform supports the end-to-end professional certification lifecycle within an LSP environment:
+    
+    - **Full-Cycle Management**: Built core modules covering candidate registration, document verification, assessment scheduling, and result reporting.
+    - **Evidence Tracking**: Implementation of a secure repository for candidate portfolios and evidence required for professional competency.
+    - **Certificate Issuance**: Automated workflow for validating assessment results and generating standardized professional certificates.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="standards">
+    ## Infrastructure & BNSP Standards
+
+    A critical component of the development was the translation of complex regulatory frameworks into functional software features:
+    
+    - **Regulatory Compliance**: Collaborated closely with experts to ensure the system adheres to **KKNI**, **SKKNI**, and **BNSP** standards for professional certification.
+    - **Self-Hosted Infrastructure**: Deployed on a dedicated server environment with customized web server (Nginx) and database (PostgreSQL) tuning for stability.
+    - **Data Integrity**: Implemented rigorous database setup and automated backups to ensure that all certification records remain immutable and auditable.
+
+  </Section>
+
+<Border className="my-8" />
+
+  <Section id="gallery">
+    ## Visual Gallery
+
+    <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10" faster once>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={certLanding} alt="Landing Page" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">LSP Branding & Landing Interface</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={certLogin} alt="Login Interface" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Secure Authentication Portal</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={certSchemeList} alt="Registry Dashboard" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Certification Scheme Overview</p>
+        </div>
+      </FadeIn>
+      <FadeIn className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
+        <div className="aspect-[3/2] overflow-hidden rounded-xl">
+          <Image src={certUnitComp} alt="Unit Competency" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <p className="text-white text-sm font-medium">Detailed Unit Competency & Standards View</p>
+        </div>
+      </FadeIn>
+    </FadeInStagger>
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>
