@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Button } from '@/components';
 import clsx from 'clsx';
 
@@ -7,7 +8,13 @@ export default function AppSolution({ image, href, children }: { image?: string;
       <div className="grid grid-cols-1 gap-x-4 @4xl:mx-0 @4xl:grid-cols-2 @4xl:items-start">
         {image && (
           <div className="py-4 @4xl:sticky @4xl:top-1 @4xl:col-start-2 @4xl:row-start-1 @5xl:w-[110%]">
-            <img className="w-[48rem] rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src={`/projects/diagrams/${image}`} alt="" />
+            <Image
+              className="w-[48rem] rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+              src={`/projects/diagrams/${image}`}
+              alt="High level architecture"
+              width={1920}
+              height={1080}
+            />
             <p className="flex text-gray-500 mt-1 gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                 <path
