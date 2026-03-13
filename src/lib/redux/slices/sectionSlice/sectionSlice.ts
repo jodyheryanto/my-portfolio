@@ -27,6 +27,7 @@ export const sectionSlice = createSlice({
   initialState,
   reducers: {
     setSections: (state, action: PayloadAction<{ sections: Section[] }>) => {
+      if (!action.payload.sections) return state;
       return {
         sections: action.payload.sections as Section[],
         sectionsOrder: state.sectionsOrder,
@@ -41,6 +42,7 @@ export const sectionSlice = createSlice({
       };
     },
     setVisible: (state, action: PayloadAction<{ key: string }>) => {
+      if (!state.sections) return;
       let item = current(state.sections).find((val) => val.id === action.payload.key) as Section;
       if (!item) return;
 

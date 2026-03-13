@@ -26,7 +26,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     [string, Section[]]
   >;
 
-  const allSections = Object.fromEntries([['/', homeSections], ...mdxSectionEntries, ...tsxSectionEntries]);
+  const allSections = Object.fromEntries(
+    [...mdxSectionEntries, ...tsxSectionEntries, ['/', homeSections]].filter(([_, sections]) => sections !== undefined)
+  );
 
   const allApps = await loadApps();
   const allLeetcode = await loadLeetcode();
