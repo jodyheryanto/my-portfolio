@@ -5,7 +5,7 @@ import { RefObject, createContext, useContext } from 'react';
 
 const FadeInStaggerContext = createContext(false);
 
-const viewport = { margin: '0px 0px -150px' };
+const viewport = { margin: '0px 0px -150px', once: true };
 
 interface ViewportOptions {
   root?: RefObject<Element>;

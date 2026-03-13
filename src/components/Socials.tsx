@@ -38,11 +38,6 @@ export default function Socials({ className }: { className?: string; invert?: bo
           </Link>
         </FadeIn>
       ))}
-      <FadeIn>
-        <Button className="flex items-center gap-x-2" href="mailto:jodyheryanto18@gmail.com" variant="secondary" arrow="right">
-          Contact Me
-        </Button>
-      </FadeIn>
     </FadeInStagger>
   );
 }

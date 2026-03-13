@@ -43,17 +43,18 @@ export default function AnimatedTitle() {
     ];
 
     const animateWords = async () => {
-      for (const action of animationActions) {
-        if (hasCanceled_) {
-          return;
-        }
-        if (typeof action.value === 'number') {
-          await sleep(action.value);
-        } else if (!hasCanceled_) {
-          await action.controller.start(action.value);
+      while (!hasCanceled_) {
+        for (const action of animationActions) {
+          if (hasCanceled_) {
+            return;
+          }
+          if (typeof action.value === 'number') {
+            await sleep(action.value);
+          } else if (!hasCanceled_) {
+            await action.controller.start(action.value);
+          }
         }
       }
-      animateWords();
     };
     animateWords();
     return () => {

@@ -120,7 +120,7 @@ export default function GridPattern() {
       <Pattern
         className="absolute inset-x-0 -top-14 h-[900px] w-full fill-[#2b2f46] stroke-white/10 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
         yOffset={-96}
-        interactive
+        interactive={false}
       />
     </motion.div>
   );

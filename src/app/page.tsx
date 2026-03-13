@@ -1,5 +1,5 @@
 'use client';
-import { AboutMe, AnimatedTitle, Border, Certification, ContactForm, Container, FadeIn, GridPattern, JournalArticles, MyWork, Section, SectionHeader, Skills, Socials, Stars, Teaching, WorkExperience } from '@/components';
+import { AboutMe, AnimatedTitle, Border, Certification, Container, FadeIn, GridPattern, JournalArticles, MyWork, Section, SectionHeader, Skills, Socials, Stars, Teaching, WorkExperience } from '@/components';
 import { Archive, BookOpen, BriefCase, Envelope, Projects, RadioTower, Technologies } from '@/icons';
 import { sectionSlice, useDispatch } from '@/lib/redux';
 import { useEffect } from 'react';
@@ -14,7 +14,6 @@ export const sections = [
   { index: 4, title: 'Certification', id: 'certification' },
   { index: 5, title: 'Journal Articles', id: 'journal-articles' },
   { index: 6, title: 'Projects', id: 'projects' },
-  { index: 7, title: 'Contact Me', id: 'contact' },
 ];
 
 interface contentSection {
@@ -135,24 +134,6 @@ const content: contentSection[] = [
       ),
     },
     mainContent: <MyWork />,
-  },
-  {
-    id: sections[7].id,
-    sectionHeader: {
-      icon: (
-        <>
-          <Envelope height="28" width="28" />
-          <span className="bg-blue-400 icon-blur absolute inset-0 -z-10"></span>
-        </>
-      ),
-      title: 'Contact Me',
-      description: (
-        <div>
-          Let&apos;s <span className="text-blue-400">collaborate</span> on your next <span className="text-blue-400">digital transformation</span> journey
-        </div>
-      ),
-    },
-    mainContent: <ContactForm />,
   },
 ];
 

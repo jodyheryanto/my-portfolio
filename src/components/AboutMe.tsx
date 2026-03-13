@@ -19,7 +19,7 @@ export default function AboutMe() {
           </div>
         }
       />
-      <Stars id="about-me" />
+      {/* <Stars id="about-me" /> */}
       <div className="@container">
         <div className="flex flex-col gap-8 mt-24 @lg:flex-row justify-between">
           <div className="max-w-xl flex-auto">

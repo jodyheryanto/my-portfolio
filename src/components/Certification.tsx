@@ -7,11 +7,11 @@ const certificationCategories = [
     title: 'IT Governance, Audit & Cybersecurity',
     icon: <RadioTower height="24" width="24" />,
     items: [
-      { name: 'ISO/IEC 42001:2023 Lead Auditor', issuer: 'PECB', date: 'Jan 2026' },
-      { name: 'ISO/IEC 27001:2022 Lead Auditor', issuer: 'PECB', date: 'Dec 2025' },
+      { name: 'ISO/IEC 42001:2023 Lead Auditor', issuer: 'Mastermind', date: 'Jan 2026' },
+      { name: 'ISO/IEC 27001:2022 Lead Auditor', issuer: 'Mastermind', date: 'Dec 2025' },
       { name: 'Certified Red Team Operations Management (CRTOM)', issuer: 'RedTeam', date: 'Dec 2025' },
       { name: 'TOGAF® Business Architecture Foundation', issuer: 'The Open Group', date: 'Sep 2025' },
-      { name: 'Certified Information Technology Auditor Professional', issuer: 'Professional Board', date: '2023' },
+      { name: 'Certified Information Technology Auditor Professional', issuer: 'Dilatih.co', date: '2023' },
     ]
   },
   {
@@ -19,9 +19,9 @@ const certificationCategories = [
     icon: <BriefCase height="24" width="24" />,
     items: [
       { name: 'ICT Project Manager Certification', issuer: 'BNSP', date: '2025' },
-      { name: 'Scrum with AI Certified', issuer: 'Scrum Alliance', date: 'Dec 2025' },
+      { name: 'Scrum with AI Certified', issuer: 'Scrumstudy', date: 'Dec 2025' },
       { name: 'Scrum Fundamentals Certified (SFC)', issuer: 'SCRUMstudy', date: '2024' },
-      { name: 'Certified IT Project Management in Practices', issuer: 'Professional Board', date: '2022' },
+      { name: 'Certified IT Project Management in Practices', issuer: 'Dilatih.co', date: '2022' },
     ]
   },
   {

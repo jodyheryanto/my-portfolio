@@ -188,21 +188,7 @@
   }
 }
 
-#about-me canvas {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-}
-
-#stars-container canvas {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-}
+/* Particles handled by fullScreen: true */
 
 .skills-picker {
   position: relative;

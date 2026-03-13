@@ -105,12 +105,12 @@ const teachingExperience = [
   },
   {
     title: 'Advanced Microsoft Excel Instructor',
-    organization: 'Jogja Smart Indotama',
+    organization: 'PT Macroprima Panganutama',
     date: 'Feb 2025',
     description: [
       'Facilitated an intensive training course progressing from fundamental Excel functionalities to advanced data analysis. Equipped participants with practical skills to design interactive data dashboards.',
     ],
-    image: { url: '/work/jsi.png', height: 80, width: 80, className: 'bg-white p-1' },
+    image: { url: '/work/macroprima.png', height: 80, width: 80, className: 'bg-white p-1' },
   },
 ];
 

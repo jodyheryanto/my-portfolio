@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function ExpandArrowLink({ href, className }: { href: string; className: string }) {
   return (
-    <div className="flex w-max my-work-button-container cursor-pointer mt-8">
+    <div className="flex w-max my-work-button-container cursor-pointer mt-12">
       <Link href={href} className={clsx('my-work-button text-2xl font-semibold relative', className)}>
         Learn more
       </Link>

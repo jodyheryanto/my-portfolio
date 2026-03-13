@@ -23,26 +23,22 @@ export default function GlowCard({ children, className = '', glowClassName = '' 
   const rotateY = useTransform(mouseX, [0, width.get()], [1.5, -1.5]);
 
   const containerRef = useRef<null | HTMLDivElement>(null);
-  const intervalRef = useRef<null | NodeJS.Timeout>(null);
+  const rectRef = useRef<{ left: number; top: number } | null>(null);
 
-  const onMouseMove: React.MouseEventHandler<HTMLDivElement> = ({ currentTarget, clientX, clientY }: React.MouseEvent<HTMLDivElement>) => {
-    let { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  };
-
-  const onMouseLeave: React.MouseEventHandler<HTMLDivElement> = (e) => {
-    if (!containerRef.current) return;
-    intervalRef.current = setInterval(() => {
-      rotateX.set(0);
-      rotateY.set(0);
-      clearInterval(intervalRef.current!);
-    }, 30);
+  const onMouseMove: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    if (!rectRef.current) return;
+    mouseX.set(e.clientX - rectRef.current.left);
+    mouseY.set(e.clientY - rectRef.current.top);
   };
 
   const onMouseEnter: React.MouseEventHandler<HTMLDivElement> = (e) => {
-    if (!intervalRef.current) return;
-    clearInterval(intervalRef.current!);
+    rectRef.current = e.currentTarget.getBoundingClientRect();
+  };
+
+  const onMouseLeave: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    rectRef.current = null;
+    rotateX.set(0);
+    rotateY.set(0);
   };
 
   useLayoutEffect(() => {
@@ -70,7 +66,7 @@ export default function GlowCard({ children, className = '', glowClassName = '' 
       onMouseEnter={onMouseEnter}
       style={style}
       className={clsx(
-        'group overflow-hidden p-6 sm:p-8 lg:p-12 relative z-10 rounded-2xl border border-gray-500/20 bg-gray-900/20 transition-all glow-card-transition-duration hover:shadow-md select-none',
+        'group overflow-hidden p-6 sm:p-8 lg:p-12 relative z-10 rounded-2xl border border-gray-500/20 bg-gray-900/20 transition-all glow-card-transition-duration hover:shadow-md select-none will-change-transform',
         className
       )}
     >

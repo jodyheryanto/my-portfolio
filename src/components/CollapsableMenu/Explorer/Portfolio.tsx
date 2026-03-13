@@ -86,7 +86,7 @@ const subSectionsIcons: { [key: string]: JSX.Element } = {
   infrastructure: <CloudUpload />,
   monitoring: <TechnologiesIcon />,
   gallery: <Archive />,
-  management: <LogIcon />,
+  management: <BriefCase />,
   devops: <CloudUpload />,
   goals: <SolutionIcon />,
   digital: <App />,
@@ -262,7 +262,7 @@ function FileSection({ id, title, url }: { id: string; title: string; url: strin
         )}
         <Link href={`${url}#${id}`} className={clsx('flex items-center hover:text-gray-500 px-[4px] transition-colors duration-300', isVisible ? 'text-blue-100' : 'text-gray-500')}>
           {subSectionsIcons[splitId] ? <div className="mr-2">{subSectionsIcons[splitId]}</div> : <div className="mr-3 w-4" />}
-          <p className="leading-5">{title} [{splitId}]</p>
+          <p className="leading-5">{title}</p>
         </Link>
       </motion.div>
     </AnimatePresence>
