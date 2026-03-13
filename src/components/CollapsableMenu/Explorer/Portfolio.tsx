@@ -204,8 +204,8 @@ interface FileWrapperProps extends FileProps {
 function File({ name, icon, url, indent, sections }: FileWrapperProps) {
   return (
     <>
-      <FileContent name={name} icon={icon} url={url} indent={indent} active={sections.length > 0} />
-      {sections.length > 0 && (
+      <FileContent name={name} icon={icon} url={url} indent={indent} active={sections?.length > 0} />
+      {sections?.length > 0 && (
         <div style={{ paddingLeft: indent * 16 + 22 }} className="flex flex-col ml-7 relative py-1">
           <FadeInStagger className="w-max" role="list">
             {sections.map((section) => (

@@ -8,6 +8,7 @@ import { Analytics } from '@vercel/analytics/react';
 import glob from 'fast-glob';
 import type { Metadata } from 'next';
 import { Toaster } from 'react-hot-toast';
+import { sections as homeSections } from './sections';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     [string, Section[]]
   >;
 
-  const allSections = Object.fromEntries([...mdxSectionEntries, ...tsxSectionEntries]);
+  const allSections = Object.fromEntries([['/', homeSections], ...mdxSectionEntries, ...tsxSectionEntries]);
 
   const allApps = await loadApps();
   const allLeetcode = await loadLeetcode();
