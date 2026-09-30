@@ -8,7 +8,7 @@ import { useState } from 'react';
 const skills = [
   { skill: 'Strategy', buttonClassNames: 'rounded-tl-full' },
   { skill: 'Infra', buttonClassNames: 'rounded-tr-full' },
-  { skill: 'Cyber', buttonClassNames: 'rounded-bl-full' },
+  { skill: 'AI', buttonClassNames: 'rounded-bl-full' },
   { skill: 'Education', buttonClassNames: 'rounded-br-full' },
 ];
 
@@ -28,11 +28,13 @@ const skillsLogos = {
     { name: 'Docker', image: '/logos/docker-logo.png' },
     { name: 'Gitlab CI/CD', image: '/logos/gitlab-cicd.png' },
   ],
-  ['Cyber' as string]: [
-    { name: 'Network Security', image: '/logos/security.jpg' },
-    { name: 'FRP Tunnel', image: '/logos/frp.png' },
-    { name: 'Vulnerability Assessment', image: '/logos/vulnerability.png' },
-    { name: 'Penetration Testing', image: '/logos/pentest.png' },
+  ['AI' as string]: [
+    { name: 'Machine Learning', image: '' },
+    { name: 'MLOps', image: '' },
+    { name: 'LLM Deployment', image: '' },
+    { name: 'Apache Airflow', image: '' },
+    { name: 'NLP & Sentiment', image: '' },
+    { name: 'Explainable AI', image: '' },
   ],
   ['Education' as string]: [
     { name: 'Instructional Design', image: '/logos/instructional-design.jpg' },
@@ -45,7 +47,7 @@ const skillsLogos = {
 const skillsTitles = {
   ['Strategy' as string]: 'Strategy & Management',
   ['Infra' as string]: 'Infrastructure & Cloud',
-  ['Cyber' as string]: 'Cybersecurity',
+  ['AI' as string]: 'Applied AI & MLOps',
   ['Education' as string]: 'Education & Instruction',
 };
 
@@ -89,17 +91,28 @@ export default function Skills() {
           return (
             <FadeIn key={skill.name} className="h-[115px] w-24 place-self-center flex flex-col">
               <div className="mt-auto">
-                <Image
-                  src={skill.image}
-                  className="object-contain rounded-md m-auto"
-                  alt=""
-                  height={64}
-                  width={64}
-                  style={{
-                    width: 64,
-                    height: 64,
-                  }}
-                />
+                {skill.image ? (
+                  <Image
+                    src={skill.image}
+                    className="object-contain rounded-md m-auto"
+                    alt=""
+                    height={64}
+                    width={64}
+                    style={{
+                      width: 64,
+                      height: 64,
+                    }}
+                  />
+                ) : (
+                  <div aria-hidden="true" className="m-auto flex h-16 w-16 items-center justify-center rounded-md border border-[#525df3]/40 bg-[#525df3]/15 text-lg font-bold text-white">
+                    {skill.name
+                      .split(/[\s&]+/)
+                      .filter(Boolean)
+                      .slice(0, 2)
+                      .map((w) => w[0])
+                      .join('')}
+                  </div>
+                )}
                 <h3 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{skill.name}</h3>
               </div>
             </FadeIn>

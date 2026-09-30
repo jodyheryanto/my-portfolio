@@ -2,22 +2,48 @@
 import { FadeIn, FadeInStagger } from '@/components';
 import { BookOpen } from '@/icons';
 
-const articles = [
+type Article = {
+  title: string;
+  authors: string;
+  journal: string;
+  metadata: string;
+  year: string;
+  link?: string;
+  status?: string;
+};
+
+const articles: Article[] = [
   {
-    title: 'Performance Evaluation of Cloud-Init as Deployment Automation, Virtual Machine, and LXC Container on Proxmox VE for AI LLM Deployment',
-    authors: 'Jody, FA Riandhito, R Yusuf, A Saputra, JE Riwurohi',
-    journal: 'Jurnal Sisfokom (Sistem Informasi dan Komputer)',
-    metadata: 'p-ISSN: 2301-7988, e-ISSN: 2581-0588, Vol 15, No 01, Dec 2025, page. 125-132',
-    year: '2025',
-    link: 'https://jurnal.atmaluhur.ac.id/index.php/sisfokom/article/view/2562',
+    title: 'Comparative Performance of Operating Systems in Handling Sentiment Analysis REST API Workloads',
+    authors: 'Jody, Imelda',
+    journal: 'Jurnal Teknik Informatika (JTI), UIN Syarif Hidayatullah Jakarta',
+    metadata: 'p-ISSN: 1979-9160, e-ISSN: 2549-7901 · Accepted, to appear October 2026',
+    year: '2026',
+    status: 'Accepted',
+  },
+  {
+    title: 'Sistem Rekomendasi Jalur Sertifikasi Berbasis Machine Learning untuk Lifelong Learning',
+    authors: 'Jody, FA Riandhito, M Ridwan, D Pebrianti',
+    journal: 'JEPIN (Jurnal Edukasi dan Penelitian Informatika)',
+    metadata: 'p-ISSN: 2460-0741, e-ISSN: 2548-9364, Vol 12, No 2, Aug 2026',
+    year: '2026',
+    link: 'https://jurnal.untan.ac.id/index.php/jepin/article/view/111009',
   },
   {
     title: 'Analisis Komparatif Akurasi Deteksi Teks Dokumen Keuangan Menggunakan CTPN dan EAST',
     authors: 'Jody, Achmad Solichin',
     journal: 'CSRID (Computer Science Research and Its Development Journal)',
-    metadata: 'p-ISSN: 2085-1367, Vol 18, No 2, Juni 2026',
+    metadata: 'p-ISSN: 2085-1367, Vol 18, No 2, Jun 2026',
     year: '2026',
-    link: '#',
+    link: 'https://csridjournal.potensi-utama.org/index.php/CSRIDjournal/en/article/view/313',
+  },
+  {
+    title: 'Performance Evaluation of Cloud-Init as Deployment Automation, Virtual Machine, and LXC Container on Proxmox VE for AI LLM Deployment',
+    authors: 'Jody, FA Riandhito, R Yusuf, A Saputra, JE Riwurohi',
+    journal: 'Jurnal Sisfokom (Sistem Informasi dan Komputer)',
+    metadata: 'p-ISSN: 2301-7988, e-ISSN: 2581-0588, Vol 15, No 01, Dec 2025, pp. 125-132',
+    year: '2025',
+    link: 'https://jurnal.atmaluhur.ac.id/index.php/sisfokom/article/view/2562',
   },
 ];
 
@@ -51,18 +77,23 @@ export default function JournalArticles() {
                     {article.metadata}
                   </p>
                 </div>
-                <div className="mt-6 pt-6 border-t border-gray-500/10 flex justify-end">
-                  <a
-                    href={article.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors uppercase tracking-widest flex items-center gap-2"
-                  >
-                    View Publication
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                    </svg>
-                  </a>
+                <div className="mt-6 pt-6 border-t border-gray-500/10 flex items-center justify-between gap-4">
+                  <span className="text-xs font-bold uppercase tracking-widest text-gray-500">First author</span>
+                  {article.link ? (
+                    <a
+                      href={article.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors uppercase tracking-widest flex items-center gap-2"
+                    >
+                      View Publication
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <span className="text-xs font-bold uppercase tracking-widest text-about_me_green">{article.status ?? 'In press'}</span>
+                  )}
                 </div>
               </div>
             </div>

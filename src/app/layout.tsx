@@ -11,9 +11,30 @@ import { Toaster } from 'react-hot-toast';
 import { sections as homeSections } from './sections';
 import './globals.css';
 
+const siteTitle = 'Jody | IT & AI Consultant · Applied AI & MLOps Researcher';
+const siteDescription =
+  'IT & AI consultant, applied AI and MLOps researcher, and BNSP trainer. 5+ years designing and running infrastructure on AWS, Alibaba Cloud, Proxmox VE and Kubernetes. Founder of LSPKu.';
+
 export const metadata: Metadata = {
-  title: 'Jody | IT Project Manager & Infrastructure Expert',
-  description: 'IT Project Manager specialized in infrastructure design, operational leadership, and technology-driven business transformation.',
+  metadataBase: new URL('https://jody.my.id'),
+  title: siteTitle,
+  description: siteDescription,
+  keywords: ['Jody', 'IT Consultant', 'AI Consultant', 'MLOps', 'LLM Deployment', 'Proxmox', 'Kubernetes', 'BNSP Trainer', 'LSPKu', 'Indonesia'],
+  authors: [{ name: 'Jody', url: 'https://jody.my.id' }],
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    url: 'https://jody.my.id',
+    siteName: 'Jody',
+    title: siteTitle,
+    description: siteDescription,
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+  },
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

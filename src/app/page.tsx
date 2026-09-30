@@ -1,10 +1,8 @@
 'use client';
-import { AboutMe, AnimatedTitle, Border, Certification, Container, FadeIn, GridPattern, JournalArticles, MyWork, Section, SectionHeader, Skills, Socials, Stars, Teaching, WorkExperience } from '@/components';
+import { AboutMe, AnimatedTitle, Border, Certification, ContactButtons, ContactCTA, Container, FadeIn, GridPattern, JournalArticles, MyWork, Section, SectionHeader, Services, Skills, Stars, Teaching, WorkExperience } from '@/components';
 import { Archive, BookOpen, BriefCase, Envelope, Projects, RadioTower, Technologies } from '@/icons';
 import { sectionSlice, useDispatch } from '@/lib/redux';
 import { useEffect } from 'react';
-
-
 
 import { sections } from './sections';
 
@@ -18,9 +16,34 @@ interface contentSection {
   mainContent: React.ReactNode;
 }
 
+const highlights = [
+  { value: '5+ yrs', label: 'IT infrastructure' },
+  { value: '50+', label: 'Servers migrated' },
+  { value: '15+', label: 'Training programs' },
+  { value: '4', label: 'Research papers' },
+];
+
 const content: contentSection[] = [
   {
     id: sections[1].id,
+    sectionHeader: {
+      icon: (
+        <>
+          <BriefCase height="28" width="28" />
+          <span className="bg-about_me_green icon-blur absolute inset-0 -z-10"></span>
+        </>
+      ),
+      title: 'Services',
+      description: (
+        <div>
+          How I help: <span className="text-about_me_green">IT & cloud consulting</span>, <span className="text-skills_purple">AI & MLOps</span> and <span className="text-work_experience_orange">corporate training</span>
+        </div>
+      ),
+    },
+    mainContent: <Services />,
+  },
+  {
+    id: sections[2].id,
     sectionHeader: {
       icon: (
         <>
@@ -31,14 +54,14 @@ const content: contentSection[] = [
       title: 'Work Experience',
       description: (
         <div>
-          <span className="text-work_experience_orange">IT Professional</span> with experience in <span className="text-work_experience_orange">Infrastructure Management</span> and <span className="text-work_experience_orange">Project Leadership</span>
+          From <span className="text-work_experience_orange">system administrator</span> to <span className="text-work_experience_orange">Head of IT Infrastructure</span>, now <span className="text-work_experience_orange">consultant, trainer and founder</span>
         </div>
       ),
     },
     mainContent: <WorkExperience />,
   },
   {
-    id: sections[2].id,
+    id: sections[3].id,
     sectionHeader: {
       icon: (
         <>
@@ -49,14 +72,14 @@ const content: contentSection[] = [
       title: 'Skills',
       description: (
         <div>
-          Specialized in <span className="text-skills_purple">Infrastructure & Cloud</span>, <span className="text-skills_purple">Strategy & Management</span>, and <span className="text-skills_purple">Cybersecurity</span>
+          Specialized in <span className="text-skills_purple">Infrastructure & Cloud</span>, <span className="text-skills_purple">Strategy & Management</span>, and <span className="text-skills_purple">Applied AI & MLOps</span>
         </div>
       ),
     },
     mainContent: <Skills />,
   },
   {
-    id: sections[3].id,
+    id: sections[4].id,
     sectionHeader: {
       icon: (
         <>
@@ -67,14 +90,14 @@ const content: contentSection[] = [
       title: 'Professional Instructor',
       description: (
         <div>
-          Expertise in <span className="text-blue-400">knowledge sharing</span> and <span className="text-blue-400">professional development</span> across IT domains
+          <span className="text-blue-400">15+ programs</span> in data, AI and IT for <span className="text-blue-400">enterprises, universities and government</span>
         </div>
       ),
     },
     mainContent: <Teaching />,
   },
   {
-    id: sections[4].id,
+    id: sections[5].id,
     sectionHeader: {
       icon: (
         <>
@@ -85,14 +108,14 @@ const content: contentSection[] = [
       title: 'Certifications',
       description: (
         <div>
-          Validating technical <span className="text-skills_purple">proficiency</span> and <span className="text-skills_purple">competency</span> through global benchmarks
+          Current credentials in <span className="text-skills_purple">AI & MLOps</span>, <span className="text-skills_purple">IT governance</span> and <span className="text-skills_purple">project management</span>
         </div>
       ),
     },
     mainContent: <Certification />,
   },
   {
-    id: sections[5].id,
+    id: sections[6].id,
     sectionHeader: {
       icon: (
         <>
@@ -103,14 +126,14 @@ const content: contentSection[] = [
       title: 'Journal Articles',
       description: (
         <div>
-          Contributing to <span className="text-blue-400">academic research</span> and <span className="text-blue-400">thought leadership</span> in computer science
+          <span className="text-blue-400">First-author</span> research on <span className="text-blue-400">LLM deployment, document AI and NLP systems</span>
         </div>
       ),
     },
     mainContent: <JournalArticles />,
   },
   {
-    id: sections[6].id,
+    id: sections[7].id,
     sectionHeader: {
       icon: (
         <>
@@ -154,14 +177,25 @@ export default function Index() {
                 </span>{' '}
                 / &#8205; <AnimatedTitle />
               </div>
-              <p className="max-w-3xl text-lg text-gray-400 text-justify">
-                I am an <span className="text-white font-semibold">IT Project Manager</span> with a strong core in <span className="text-white font-semibold">infrastructure design</span> and <span className="text-white font-semibold">operational leadership</span>.
-                I specialize in aligning technology solutions with business objectives, ensuring that every project is delivered with clarity, efficiency, and long-term value.
-                My ability to bridge high-level strategy with technical understanding allows me to lead with both vision and precision in fast-paced, complex IT environments.
+              <p className="max-w-3xl text-lg text-gray-400">
+                I work where <span className="text-white font-semibold">AI meets real infrastructure</span>, and I teach others to do the same. Infrastructure engineer by background,{' '}
+                <span className="text-white font-semibold">applied AI & MLOps researcher</span> by focus, <span className="text-white font-semibold">BNSP trainer</span> by practice, and founder of{' '}
+                <a href="https://lspku.com" target="_blank" rel="noopener noreferrer" className="text-my_work_yellow font-semibold hover:underline">
+                  LSPKu
+                </a>
+                .
               </p>
+              <dl className="mt-8 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4">
+                {highlights.map((h) => (
+                  <div key={h.label} className="rounded-2xl border border-gray-500/20 bg-gray-900/40 px-4 py-3">
+                    <dt className="text-xs uppercase tracking-widest text-gray-500">{h.label}</dt>
+                    <dd className="mt-1 text-2xl font-semibold text-white">{h.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <ContactButtons className="mt-8" />
             </FadeIn>
 
-            <Socials />
             <div className="scroll-down">
               <span></span>
               <span></span>
@@ -183,6 +217,7 @@ export default function Index() {
               {section.mainContent}
             </Section>
           ))}
+          <ContactCTA />
         </Container>
       </div>
     </div>

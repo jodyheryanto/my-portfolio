@@ -65,13 +65,13 @@ export default function AnimatedTitle() {
   return (
     <div className="flex text-blue-100">
       <motion.div variants={list} initial="hidden" animate={cloud}>
-        <WriteWord word="IT Consultant" />
+        <WriteWord word="IT & AI Consultant" />
       </motion.div>
       <motion.div variants={list} initial="hidden" animate={system}>
-        <WriteWord word="Project Manager" />
+        <WriteWord word="MLOps Researcher" />
       </motion.div>
       <motion.div variants={list} initial="hidden" animate={devops}>
-        <WriteWord word="Professional Instructor" />
+        <WriteWord word="BNSP Trainer & Assessor" />
       </motion.div>
     </div>
   );

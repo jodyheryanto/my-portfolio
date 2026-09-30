@@ -9,8 +9,9 @@ import BottomBar from './BottomBar';
 import Button from './Button';
 import { CodeGroup } from './Code';
 import CollapsableMenu from './CollapsableMenu';
-import ContactForm from './ContactForm';
+import ContactCTA, { ContactButtons } from './ContactCTA';
 import Container from './Container';
+import Services from './Services';
 import ExpandArrowLink from './ExpandArrowLink';
 import { FadeIn, FadeInStagger, Stagger } from './FadeIn';
 import GlowCard from './GlowCard';
@@ -42,8 +43,10 @@ export {
   Button,
   CodeGroup,
   CollapsableMenu,
-  ContactForm,
+  ContactButtons,
+  ContactCTA,
   Container,
+  Services,
   ExpandArrowLink,
   FadeIn,
   FadeInStagger,

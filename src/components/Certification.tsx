@@ -4,35 +4,37 @@ import { Archive, BriefCase, RadioTower } from '@/icons';
 
 const certificationCategories = [
   {
-    title: 'IT Governance, Audit & Cybersecurity',
+    title: 'AI, Data & MLOps',
     icon: <RadioTower height="24" width="24" />,
+    items: [
+      { name: 'Certification: DAG Authoring for Apache Airflow 3', issuer: 'Astronomer', date: 'Jan 2026' },
+      { name: 'Certification for Apache Airflow 3 Fundamentals', issuer: 'Astronomer', date: 'Jan 2026' },
+      { name: 'EITCA/AI Artificial Intelligence Certificate', issuer: 'EITCA Academy', date: 'Nov 2025' },
+      { name: 'Neo4j Graph Data Science Certification', issuer: 'Neo4j', date: 'Nov 2025' },
+      { name: 'AI Security & Governance', issuer: 'Securiti AI', date: 'Aug 2025' },
+    ],
+  },
+  {
+    title: 'IT Governance, Audit & Security',
+    icon: <Archive height="24" width="24" />,
     items: [
       { name: 'ISO/IEC 42001:2023 Lead Auditor', issuer: 'Mastermind', date: 'Jan 2026' },
       { name: 'ISO/IEC 27001:2022 Lead Auditor', issuer: 'Mastermind', date: 'Dec 2025' },
-      { name: 'Certified Red Team Operations Management (CRTOM)', issuer: 'RedTeam', date: 'Dec 2025' },
+      { name: 'Fortinet Certified Associate Cybersecurity', issuer: 'Fortinet', date: 'Dec 2025' },
+      { name: 'Certified Red Team Operations Management (CRTOM)', issuer: 'Red Team Leaders', date: 'Dec 2025' },
       { name: 'TOGAF® Business Architecture Foundation', issuer: 'The Open Group', date: 'Sep 2025' },
-      { name: 'Certified Information Technology Auditor Professional', issuer: 'Dilatih.co', date: '2023' },
-    ]
+    ],
   },
   {
-    title: 'Project Management',
+    title: 'Project Management & Cloud',
     icon: <BriefCase height="24" width="24" />,
     items: [
-      { name: 'ICT Project Manager Certification', issuer: 'BNSP', date: '2025' },
-      { name: 'Scrum with AI Certified', issuer: 'Scrumstudy', date: 'Dec 2025' },
-      { name: 'Scrum Fundamentals Certified (SFC)', issuer: 'SCRUMstudy', date: '2024' },
-      { name: 'Certified IT Project Management in Practices', issuer: 'Dilatih.co', date: '2022' },
-    ]
+      { name: 'Scrum with AI Certified (SAC)', issuer: 'SCRUMstudy', date: 'Dec 2025' },
+      { name: 'ICT Project Manager Certification', issuer: 'BNSP', date: 'Feb 2025' },
+      { name: 'Scrum Fundamentals Certified (SFC)', issuer: 'SCRUMstudy', date: 'Sep 2024' },
+      { name: 'Oracle Cloud Infrastructure 2023 Certified Foundations Associate', issuer: 'Oracle', date: 'Jul 2023' },
+    ],
   },
-  {
-    title: 'Infrastructure & Cloud',
-    icon: <Archive height="24" width="24" />,
-    items: [
-      { name: 'Alibaba Cloud DevOps Speciality Certification', issuer: 'Alibaba Cloud', date: 'Sep 2025' },
-      { name: 'AWS Cloud Quest: Cloud Practitioner', issuer: 'AWS', date: 'Sep 2024' },
-      { name: 'Oracle Cloud Infrastructure Certified Foundations Associate', issuer: 'Oracle', date: '2023' },
-    ]
-  }
 ];
 
 export default function Certification() {

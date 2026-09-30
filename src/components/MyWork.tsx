@@ -45,9 +45,9 @@ const projects: Project[] = [
   },
   {
     href: '/apps/government-implementation',
-    name: 'Government Modernization',
+    name: 'Government Reporting Platform',
     full: false,
-    description: ' modernization of IT infrastructure for Ministry of Internal Affairs.',
+    description: ' on Kubernetes and Nutanix for the Ministry of Home Affairs.',
     image: { src: govLanding },
   },
   {
@@ -83,7 +83,7 @@ export default function MyWork() {
                 project.full ? '@md:w-[80%] @xl:w-[70%] @2xl:w-[55%] @md:rounded-tl-md bottom-0 right-0' : 'bottom-0 @xl:right-0 @xl:w-[70%] @3xl:w-full'
               )}
               src={project.image.src}
-              alt=""
+              alt={`${project.name} screenshot`}
             />
           </GlowCard>
         ))}
