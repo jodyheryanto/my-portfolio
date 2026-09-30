@@ -1,5 +1,6 @@
 'use client';
 import { FadeIn, FadeInStagger, GlowCard } from '@/components';
+import Image from 'next/image';
 
 const services = [
   {
@@ -41,7 +42,7 @@ export default function Services() {
               <div className="flex h-full flex-col gap-4">
                 <h3 className={`text-xl font-semibold ${s.accent}`}>{s.title}</h3>
                 <p className="text-gray-400">{s.summary}</p>
-                <ul className="list-disc space-y-1 pl-5 text-gray-300">
+                <ul className="list-disc space-y-1 pl-5 text-gray-500 marker:text-gray-500/60">
                   {s.points.map((p) => (
                     <li key={p}>{p}</li>
                   ))}
@@ -56,12 +57,15 @@ export default function Services() {
       <FadeIn className="mt-6">
         <GlowCard className="hover:shadow-my_work_yellow/60" glowClassName="from-[#ffdc8b] to-[#ffdc8b]">
           <div className="flex flex-col gap-4 @2xl:flex-row @2xl:items-center @2xl:justify-between">
-            <div className="max-w-2xl">
+            <div className="flex max-w-2xl items-start gap-5">
+              <Image src="/work/lspku.png" alt="LSPKu logo" width={72} height={72} className="flex-none rounded-2xl" />
+              <div>
               <p className="text-xs uppercase tracking-widest text-gray-500">Product I founded</p>
               <h3 className="mt-1 text-2xl font-semibold text-my_work_yellow">LSPKu</h3>
               <p className="mt-2 text-gray-400">
                 A certification operations platform for Indonesian LSPs: OCR document onboarding, AI scheme recommendation and assessment scheduling in one portal.
               </p>
+              </div>
             </div>
             <a
               href="https://lspku.com"

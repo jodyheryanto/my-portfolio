@@ -18,6 +18,7 @@ const experience: Role[] = [
       'Developed OCR-based document onboarding and AI scheme recommendation to reduce manual data entry for LSP admins.',
       'Designed a multi-tenant, multi-role architecture (admin, assessor, candidate) on self-hosted infrastructure.',
     ],
+    image: { url: '/work/lspku.png', height: 96, width: 96, className: 'bg-white' },
   },
   {
     title: 'LSP Teknologi Informatika Bisnis Digital | Competency Assessor (BNSP)',
@@ -26,6 +27,7 @@ const experience: Role[] = [
       'BNSP-licensed competency assessor for IT certification schemes, including IT Quality Assurance.',
       'Assess candidates through portfolio review, observation and interviews in line with SKKNI and BNSP standards.',
     ],
+    image: { url: '/work/lsp-tibd.png', height: 96, width: 96, className: 'bg-white' },
   },
   {
     title: 'PT Atlasfizl Meraki Inovasi | IT Consultant & Professional Instructor',
@@ -87,6 +89,7 @@ const experience: Role[] = [
       'Developed a web application that monitors product reviews using sentiment analysis (positive, neutral, negative).',
       'Built the frontend and REST API backend for review aggregation and real-time sentiment dashboards.',
     ],
+    image: { url: '/work/lenna.png', height: 96, width: 96, className: 'bg-white' },
   },
 ];
 

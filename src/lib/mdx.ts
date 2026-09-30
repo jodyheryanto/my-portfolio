@@ -28,6 +28,7 @@ export interface App {
   url: string;
   pathname: string;
   framework: string;
+  highlights?: string[];
 }
 
 export interface Leetcode {

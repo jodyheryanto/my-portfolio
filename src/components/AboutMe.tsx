@@ -35,11 +35,11 @@ export default function AboutMe() {
             </p>
           </div>
           <div className="flex-none mx-auto">
-            <Image className="rounded-full object-cover" src="/me.jpg" alt="Portrait of Jody" height={208} width={208} />
+            <Image className="rounded-full object-cover ring-4 ring-about_me_green/30" src="/me.jpg" alt="Portrait of Jody" height={224} width={224} priority />
           </div>
         </div>
         <div className="@container">
-          <div className="flex gap-5 mt-16 flex-col @3xl:flex-row justify-between">
+          <div className="grid gap-8 mt-16 grid-cols-1 @3xl:grid-cols-2 items-start">
             <div>
               <FadeIn
                 variants={{
@@ -61,7 +61,7 @@ export default function AboutMe() {
               </FadeIn>
               <Socials />
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 min-w-0">
               <FadeIn
                 variants={{
                   hidden: { opacity: 0, x: 20 },
@@ -69,14 +69,14 @@ export default function AboutMe() {
                 }}
               >
                 <GlowCard className="hover:shadow-about_me_green/90" glowClassName="from-[#6bc072] to-[#6bc072]">
-                  <div className="flex flex-col gap-8 @lg:flex-row justify-between">
-                    <div className="flex-none mx-auto self-center">
-                      <Image className="rounded-2xl object-fill bg-white" src="/budiluhur.png" alt="Universitas Budi Luhur logo" width={144} height={144} />
+                  <div className="flex items-center gap-6">
+                    <div className="flex-none">
+                      <Image className="rounded-2xl object-fill bg-white" src="/budiluhur.png" alt="Universitas Budi Luhur logo" width={88} height={88} />
                     </div>
-                    <div className="max-w-xl flex-auto drop-shadow-md">
+                    <div className="min-w-0 flex-1 drop-shadow-md">
                       <h3 className="text-lg font-semibold leading-8 tracking-tight text-white">Master of Computer Science</h3>
                       <p className="text-base leading-7 text-about_me_green">Budi Luhur University</p>
-                      <p className="text-base leading-7 text-gray-500">Expected Graduation: 2027</p>
+                      <p className="text-base leading-7 text-gray-500">Expected graduation: Aug 2027</p>
                       <p className="text-base leading-7 text-gray-500">Current GPA: 3.97</p>
                     </div>
                   </div>
@@ -89,14 +89,14 @@ export default function AboutMe() {
                 }}
               >
                 <GlowCard className="hover:shadow-about_me_green/90" glowClassName="from-[#6bc072] to-[#6bc072]">
-                  <div className="flex flex-col gap-8 @lg:flex-row justify-between">
-                    <div className="flex-none mx-auto self-center">
-                      <Image className="rounded-2xl object-fill bg-white" src="/umb.jpeg" alt="Universitas Mercu Buana logo" width={144} height={144} />
+                  <div className="flex items-center gap-6">
+                    <div className="flex-none">
+                      <Image className="rounded-2xl object-fill bg-white" src="/umb.jpeg" alt="Universitas Mercu Buana logo" width={88} height={88} />
                     </div>
-                    <div className="max-w-xl flex-auto drop-shadow-md">
+                    <div className="min-w-0 flex-1 drop-shadow-md">
                       <h3 className="text-lg font-semibold leading-8 tracking-tight text-white">Bachelor of Computer Science</h3>
                       <p className="text-base leading-7 text-about_me_green">Mercu Buana University</p>
-                      <p className="text-base leading-7 text-gray-500">Graduated in 2021</p>
+                      <p className="text-base leading-7 text-gray-500">Graduated Feb 2021</p>
                       <p className="text-base leading-7 text-gray-500">GPA: 3.93</p>
                     </div>
                   </div>
